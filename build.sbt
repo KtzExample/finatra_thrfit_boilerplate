@@ -1,7 +1,7 @@
 import sbt.Keys._
 
 lazy val versions = new {
-  val finatra = "2.5.0"
+  val finatra = "2.6.0"
   val guice = "4.1.0"
   val scalatest = "2.2.6"
   val specs2 = "3.7"
@@ -47,6 +47,5 @@ lazy val `thrift-idl` = (project in file("thrift-idl")).settings(baseSetting).se
   name:= "thrift-idl",
   scroogeThriftDependencies in Compile := Seq(
     "finatra-thrift_2.11"
-  ),
-  scroogeLanguage in Compile := "scala"
+  )
 )
