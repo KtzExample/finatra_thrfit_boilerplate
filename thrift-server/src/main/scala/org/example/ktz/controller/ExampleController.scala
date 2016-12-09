@@ -1,7 +1,7 @@
 package org.example.ktz.controller
 
-import com.example.ktz.thriftscala.TUserService
-import com.example.ktz.thriftscala.TUserService.{GetAllUserInfo, GetCarInfoById, GetUserInfoById, SetUserInfoById}
+import org.example.ktz.thriftscala.TUserService
+import org.example.ktz.thriftscala.TUserService.{GetAllUserInfo, GetCarInfoById, GetUserInfoById, SetUserInfoById}
 import com.google.inject.Inject
 import com.twitter.finagle.Service
 import com.twitter.finatra.thrift.Controller

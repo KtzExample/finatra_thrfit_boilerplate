@@ -1,6 +1,6 @@
 package org.example.ktz.module
 
-import com.example.ktz.thriftscala.{TUserCar, TUserInfo}
+import org.example.ktz.thriftscala.{TUserCar, TUserInfo}
 import com.google.inject.{Provides, Singleton}
 import com.twitter.inject.{Logging, TwitterModule}
 import org.example.ktz.persistance.FakeDatabase

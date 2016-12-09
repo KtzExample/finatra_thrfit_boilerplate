@@ -1,6 +1,6 @@
 package org.example.ktz.persistance
 
-import com.example.ktz.thriftscala.TUserInfo
+import org.example.ktz.thriftscala.TUserInfo
 
 /**
   * Created by ktz on 2016. 12. 5..

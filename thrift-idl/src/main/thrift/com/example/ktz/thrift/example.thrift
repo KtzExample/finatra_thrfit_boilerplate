@@ -1,5 +1,5 @@
-namespace java com.example.ktz.thriftjava
-#@namespace scala com.example.ktz.thriftscala
+namespace java org.example.ktz.thriftjava
+#@namespace scala org.example.ktz.thriftscala
 
 include "finatra-thrift/finatra_thrift_exceptions.thrift"
 

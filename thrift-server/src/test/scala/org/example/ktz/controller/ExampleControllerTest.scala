@@ -1,6 +1,6 @@
 package org.example.ktz.controller
 
-import com.example.ktz.thriftscala.{TUserCar, TUserInfo, TUserService}
+import org.example.ktz.thriftscala.{TUserCar, TUserInfo, TUserService}
 import com.twitter.finatra.thrift.EmbeddedThriftServer
 import com.twitter.inject.app.TestInjector
 import com.twitter.inject.server.FeatureTest
