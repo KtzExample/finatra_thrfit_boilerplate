@@ -49,5 +49,7 @@ lazy val `thrift-idl` = (project in file("thrift-idl")).settings(baseSetting).se
   name:= "thrift-idl",
   scroogeThriftDependencies in Compile := Seq(
     "finatra-thrift_2.11"
-  )
+  ),
+  scroogeLanguages in Compile := Seq("java", "scala"),
+  scroogeThriftOutputFolder in Compile <<= (sourceManaged in Compile) (_ / "")
 )
