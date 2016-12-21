@@ -1,4 +1,4 @@
-import sbt.Keys._
+import sbt.Keys.{unmanagedResourceDirectories, _}
 
 lazy val versions = new {
   val finatra = "2.6.0"
@@ -51,5 +51,6 @@ lazy val `thrift-idl` = (project in file("thrift-idl")).settings(baseSetting).se
     "finatra-thrift_2.11"
   ),
   scroogeLanguages in Compile := Seq("java", "scala"),
-  scroogeThriftOutputFolder in Compile <<= (sourceManaged in Compile) (_ / "")
+  scroogeThriftOutputFolder in Compile <<= (sourceManaged in Compile) (_ / ""),
+  unmanagedResourceDirectories in Compile += {baseDirectory.value / "src/main/thrift"}
 )
