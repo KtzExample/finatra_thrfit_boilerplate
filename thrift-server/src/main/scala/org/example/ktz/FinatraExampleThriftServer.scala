@@ -7,12 +7,12 @@ import org.example.ktz.controller.ExampleController
 import org.example.ktz.module.DatabaseModule
 
 /**
-  * Created by ktz on 2016. 12. 5..
-  */
+ * Created by ktz on 2016. 12. 5..
+ */
 
 object FinatraExampleThriftServerMain extends FinatraExampleThriftServer
 
-class FinatraExampleThriftServer extends ThriftServer{
+class FinatraExampleThriftServer extends ThriftServer {
   override val name: String = "ktzExample"
 
   override val modules = Seq(DatabaseModule)

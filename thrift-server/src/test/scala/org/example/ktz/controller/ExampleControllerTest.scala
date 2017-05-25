@@ -2,7 +2,6 @@ package org.example.ktz.controller
 
 import org.example.ktz.thriftscala.{TUserCar, TUserInfo, TUserService}
 import com.twitter.finatra.thrift.EmbeddedThriftServer
-import com.twitter.inject.app.TestInjector
 import com.twitter.inject.server.FeatureTest
 import com.twitter.util.Future
 import org.example.ktz.FinatraExampleThriftServer
@@ -12,24 +11,22 @@ import org.example.ktz.FinatraExampleThriftServer
   */
 class ExampleControllerTest extends FeatureTest{
   val modules: Seq[Nothing] = Seq.empty
-  override val server: EmbeddedThriftServer = new EmbeddedThriftServer(new FinatraExampleThriftServer)
-  override val injector = TestInjector(modules: _*)
+  override lazy val server: EmbeddedThriftServer = new EmbeddedThriftServer(twitterServer = new FinatraExampleThriftServer)
 
   val client: TUserService[Future] = server.thriftClient[TUserService[Future]](clientId = "client123")
 
 
-  "ExampleController" should {
-    "getAllUserInfo Well" in {
+    test("getAllUserInfo Well") {
       println(client.getAllUserInfo().value)
       client.getAllUserInfo().value.size should equal(3)
     }
 
-    "getUserInfoById Well" in {
+    test("getUserInfoById Well") {
       println(client.getUserInfoById(1).value)
       client.getUserInfoById(1).value.nonEmpty should equal(true)
     }
 
-    "setUserInfoById Well" in {
+    test("setUserInfoById Well") {
       client.setUserInfoById(TUserInfo(
         3,
         "Liam",
@@ -42,9 +39,8 @@ class ExampleControllerTest extends FeatureTest{
         Some("Father"))).value.nonEmpty should equal(true)
     }
 
-    "getCarInfoById Well" in {
+    test("getCarInfoById Well") {
       println(client.getCarInfoById(1).value)
       client.getCarInfoById(1).value.nonEmpty should equal(true)
     }
-  }
 }
