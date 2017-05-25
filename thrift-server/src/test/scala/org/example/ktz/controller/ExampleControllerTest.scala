@@ -3,7 +3,7 @@ package org.example.ktz.controller
 import org.example.ktz.thriftscala.{TUserCar, TUserInfo, TUserService}
 import com.twitter.finatra.thrift.EmbeddedThriftServer
 import com.twitter.inject.server.FeatureTest
-import com.twitter.util.Future
+import com.twitter.util.{Await, Future}
 import org.example.ktz.FinatraExampleThriftServer
 
 /**
@@ -43,4 +43,13 @@ class ExampleControllerTest extends FeatureTest{
       println(client.getCarInfoById(1).value)
       client.getCarInfoById(1).value.nonEmpty should equal(true)
     }
+
+  test("optionalParameterTest Well") {
+    val test1: Int = client.optionalParameterTest(1L).value
+    val test2: Int = client.optionalParameterTest(1L, Some(1)).value
+    val test3: Int = client.optionalParameterTest(1L, Some(1), Some("1")).value
+    val test4: Int = client.optionalParameterTest(1L, pa4 = Some("1")).value
+
+    (test1, test2, test3, test4) shouldBe (1, 2, 3, 2)
+  }
 }

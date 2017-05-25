@@ -18,9 +18,11 @@ struct TUserInfo {
 service TUserService {
     list<TUserInfo> getAllUserInfo()
 
-    list<TUserInfo> getUserInfoById(i64 userId)
+    list<TUserInfo> getUserInfoById(1: required i64 userId)
 
-    list<TUserInfo> setUserInfoById(TUserInfo userInfoToSet)
+    list<TUserInfo> setUserInfoById(1: required TUserInfo userInfoToSet)
 
-    list<TUserCar> getCarInfoById(i64 userId)
+    list<TUserCar> getCarInfoById(1: required i64 userId)
+
+    i32 optionalParameterTest(1: required i64 pa1, 2: optional i32 pa2, 4: optional string pa4)
 }

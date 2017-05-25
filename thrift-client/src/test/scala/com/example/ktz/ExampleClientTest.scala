@@ -46,4 +46,13 @@ class ExampleClientTest extends IntegrationTest{
     tUserCar.isDefined shouldBe true
   }
 
+  test("optionalParameterTest - Well") {
+    val test1: Int = Await.result(exampleClient.optionalParameterTest(1L))
+    val test2: Int = Await.result(exampleClient.optionalParameterTest(1L, Some(1)))
+    val test3: Int = Await.result(exampleClient.optionalParameterTest(1L, Some(1), Some("1")))
+    val test4: Int = Await.result(exampleClient.optionalParameterTest(1L, pa4 = Some("1")))
+
+    (test1, test2, test3, test4) shouldBe (1, 2, 3, 2)
+  }
+
 }

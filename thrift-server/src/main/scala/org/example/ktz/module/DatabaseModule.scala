@@ -15,16 +15,16 @@ object DatabaseModule extends TwitterModule with Logging {
   def provideDatabase: FakeDatabase = FakeDatabase(
     Map(
       1.toLong -> TUserInfo(
-      1,
-      "martin",
-      29,
-      true,
-      TUserCar(
-        "K5",
-        123456
+        1,
+        "martin",
+        29,
+        true,
+        TUserCar(
+          "K5",
+          123456
+        ),
+        None
       ),
-      None
-    ),
       2.toLong -> TUserInfo(
         2,
         "Lea",
