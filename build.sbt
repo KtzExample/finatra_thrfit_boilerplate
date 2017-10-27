@@ -4,17 +4,16 @@ import sbt.Keys._
 import scalariform.formatter.preferences._
 
 lazy val versions = new {
-  val finatra = "2.10.0"
+  val finatra = "2.13.0"
   val guice = "4.1.0"
   val logback = "1.2.3"
-  val mockito = "1.9.5"
-  val scalatest = "3.0.2"
+  val mockito = "1.10.19"
+  val scalatest = "3.0.4"
   val scalacheck = "1.13.5"
-  val specs2 = "3.7"
 }
 
 lazy val baseSetting = Seq(
-  scalaVersion := "2.11.8",
+  scalaVersion := "2.12.4",
   version := "1.0",
   libraryDependencies ++= Seq(
     "com.twitter" %% "finatra-thrift" % versions.finatra,
@@ -36,8 +35,7 @@ lazy val baseSetting = Seq(
 
     "org.mockito" % "mockito-core" % versions.mockito % "test",
     "org.scalacheck" %% "scalacheck" % versions.scalacheck % "test",
-    "org.scalatest" %% "scalatest" % versions.scalatest % "test",
-    "org.specs2" %% "specs2" % versions.specs2 % "test"
+    "org.scalatest" %% "scalatest" % versions.scalatest % "test"
   ),
   fork in run := true,
   fork in Test := true

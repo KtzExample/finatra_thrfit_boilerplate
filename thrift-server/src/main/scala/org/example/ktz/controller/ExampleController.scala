@@ -1,12 +1,12 @@
 package org.example.ktz.controller
 
-import org.example.ktz.thriftscala.{ TUserCar, TUserInfo, TUserService }
 import org.example.ktz.thriftscala.TUserService.{ GetAllUserInfo, GetCarInfoById, GetUserInfoById, OptionalParameterTest, SetUserInfoById }
 import com.google.inject.Inject
 import com.twitter.finagle.Service
 import com.twitter.finatra.thrift.Controller
 import com.twitter.util.Future
 import org.example.ktz.persistance.FakeDatabase
+import org.example.ktz.thriftscala.{ TUserCar, TUserInfo, TUserService }
 
 /**
  * Created by ktz on 2016. 12. 5..
